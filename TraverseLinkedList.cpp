@@ -13,7 +13,7 @@ void printData(node *head){
     else{
         node *ptr=NULL;
         ptr=head;
-        cout<<"linked List elements are : "; 
+        cout<<"Linked List elements are : "; 
         while(ptr!=NULL){
             cout<<ptr->data<<" "; 
             ptr=ptr->link;
