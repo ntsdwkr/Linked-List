@@ -1,4 +1,4 @@
-//Linked List 
+//Linked List inserting,traversing,counting
 #include<iostream>
 using namespace std;
 
@@ -24,6 +24,27 @@ node *addAtBeg(node *head,int data){
 
         ptr->link=head;
         head=ptr;
+    }
+    return head;
+}
+
+node *addAtPos(node *head,int data,int pos){
+    if(pos==1){
+        head=addAtBeg(head,data);
+        return head;
+    }
+    else{
+    node *ptr=head;
+    node *temp=new node();
+    temp->data=data;
+    temp->link=NULL;
+
+    while(pos!=2){
+        ptr=ptr->link;
+        pos--;
+    }
+    temp->link=ptr->link; 
+    ptr->link=temp;
     }
     return head;
 }
@@ -123,6 +144,14 @@ int main(){
     countLinkedList(head);
     printData(head);
 
+    int d=999;
+    int pos=5; 
+    head=addAtPos(head,d,pos); 
+
+    ptr=head;
+
+    countLinkedList(head);
+    printData(head);
 
     return 0;
 }
