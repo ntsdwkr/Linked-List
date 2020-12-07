@@ -1,4 +1,4 @@
-//Linked List inserting,traversing,counting
+//Linked List - inserting node at diffrent postions,traversing,counting
 #include<iostream>
 using namespace std;
 
