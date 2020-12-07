@@ -30,7 +30,7 @@ node *addAtBeg(node *head,int data){
 
 node *addAtPos(node *head,int data,int pos){
     if(pos==1){
-        head=addAtBeg(head,data);
+        head=addAtBeg(head,data); // if position is 1st the calling addAtBeg
         return head;
     }
     else{
@@ -125,7 +125,7 @@ int main(){
     ptr=addAtEndOp(ptr,67);    
     ptr=addAtEndOp(ptr,25);    
 
-    ptr=head; //initialise ptr to head
+    ptr=head; //initialise ptr
 
     countLinkedList(head);
     printData(head);
@@ -139,7 +139,7 @@ int main(){
     head=addAtBeg(head,87);
     head=addAtBeg(head,42); 
 
-    ptr=head; //initialise ptr to head 
+    ptr=head; //initialise ptr
 
     countLinkedList(head);
     printData(head);
