@@ -99,6 +99,23 @@ node *delPos(node *head,int size, int n){
     return head;
 }
 
+node *delList(node *head){
+    if(head==NULL){
+        cout<<"Linked List is Empty!";
+    }
+    else{
+        node *temp = new node();
+        temp=head;
+        while(temp!=NULL){
+            temp=temp->link;
+            delete [] head;
+            head=temp;
+        }
+    }
+
+    return head;
+}
+
 int main(){
     int a[] = {1,2,3,4,5,6,7,8,9}; 
     int n = sizeof(a)/sizeof(a[0]); 
@@ -107,6 +124,8 @@ int main(){
     int size = countLinkedList(head);
     head = delPos(head,size,5);  
     printData(head);
+    head = delList(head);
+    printData(head); 
 
 
     return 0;
