@@ -1,5 +1,6 @@
 // doubly linked list
 #include <iostream>
+#include <algorithm>
 using namespace std;
 class node
 {
@@ -135,6 +136,45 @@ node *revDLL(node *head)
     return head;
 }
 
+int countLinkedList(node *head)
+{
+    int count = 0;
+    if (head == NULL)
+    {
+        cout << "Linked List is empty";
+    }
+    else
+    {
+        node *ptr = NULL;
+        ptr = head;
+        while (ptr != NULL)
+        {
+            count++;
+            ptr = ptr->next;
+        }
+    }
+    return count;
+}
+
+node *sortLL(node *head, int n)
+{
+    node *p = head;
+    node *q = head;
+    int x[n];
+    for (int i = 0; i < n; i++)
+    {
+        x[i] = p->data;
+        p = p->next;
+    }
+    sort(x, x + n);
+    for (int i = 0; i < n; i++)
+    {
+        q->data = x[i];
+        q = q->next;
+    }
+    return head;
+}
+
 int main()
 {
     node *head = NULL;
@@ -149,6 +189,9 @@ int main()
     head = delPos(head, 5);
     Display(head);
     head = revDLL(head);
+    Display(head);
+    int size = countLinkedList(head);
+    head = sortLL(head, size);
     Display(head);
 
     return 0;
